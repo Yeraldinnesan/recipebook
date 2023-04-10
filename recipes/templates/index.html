@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<!--  -->
+
+{% block title %} Home {% endblock %}
+
+<!--  -->
+
+{% block content %}
+<div class="container m-10">
+  <h1 class="fw-bold">Recipes</h1>
+  <div class="row">
+    <div class="col-sm-6 mb-3">
+      {% for recipe in recipes %}
+      <div class="card">
+        <div class="card-body d-flex gap-5">
+          <div>
+            <h5 class="card-header fw-bold">{{recipe.title}}</h5>
+            <p class="card-tex">{{recipe.description}}</p>
+            <a href="#" class="btn btn-info">See more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

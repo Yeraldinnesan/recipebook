@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404
 from .forms import RecipeForm
 from .models import Recipe
 
@@ -9,6 +10,12 @@ def home(request):
     recipes = Recipe.objects.all()
 
     return render(request, 'index.html', {'recipes': recipes})
+
+
+def recipe_detail(request, recipe_id):
+    recipe = get_object_or_404(Recipe, pk=recipe_id)
+
+    return render(request, 'recipedetail.html', {'recipe': recipe})
 
 
 def create_recipe(request):

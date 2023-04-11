@@ -36,10 +36,10 @@ def create_recipe(request):
 def search_recipe(request):
     queryset = Recipe.objects.all()
     query = request.GET.get('keywords')
-    category = request.GET.get('category')
 
     if query:
         queryset = queryset.filter(
+            # Q object to construct an OR query
             Q(title__icontains=query) |
             Q(description__icontains=query) |
             Q(ingredients__icontains=query) |

@@ -6,10 +6,10 @@
 <!--  -->
 
 {% block content %}
-<div class="container">
-  <h1 class="fw-bold">Recipes</h1>
+<div class="container py-5">
+  <h1 class="fw-bold text-center py-4">Recipes</h1>
   <div class="container">
-    {% for recipe in recipes %}
+    {% if recipes %} {% for recipe in recipes %}
     <div class="row g-2">
       <div class="col p-2">
         <div class="card">
@@ -25,7 +25,22 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+    {% endfor %}{% else %}
+    <div class="col-12 py-5">
+      <p class="py-5 fw-bold">No Recipes Available</p>
+      <div class="card">
+        <h5 class="py-5 text-center">Be the first to add a Recipe</h5>
+        <button class="btn-info">
+          <a
+            class="nav-link active text-light"
+            aria-current="page"
+            href="{% url 'create-recipe' %}"
+            >Create Recipe</a
+          >
+        </button>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </div>
 

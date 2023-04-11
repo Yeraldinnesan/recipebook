@@ -1,10 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container">
-  <h1 class="fw-bold text-center">Results</h1>
+<div class="container py-5">
+  <h1 class="fw-bold text-center py-4">Results</h1>
   <div class="container">
-    {% for recipe in recipes %}
-    <div class="row g-2">
+    {% if recipes %}{% for recipe in recipes %}
+    <div class="row g-2 py-5">
       <div class="col p-2">
         <div class="card">
           <div class="card-body d-flex gap-5">
@@ -19,7 +19,11 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+    {% endfor %}{% else %}
+    <div class="col-12 py-5">
+      <p>No Recipes Available</p>
+    </div>
+    {% endif %}
   </div>
 </div>
 

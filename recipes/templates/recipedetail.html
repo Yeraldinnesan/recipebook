@@ -5,19 +5,20 @@
 {% block content %}
 
 <div class="container">
-  <h1 class="text-center">{{recipe.title}}</h1>
-  <p>{{recipe.description}}</p>
+  <h1 class="text-center py-5">{{recipe.title}}</h1>
+  <p class="text-justify">{{recipe.description}}</p>
   <div class="row text-center">
-    <div class="col-md-5">
+    <div class="col">
       <h3><strong>🌟 Ingredients: </strong></h3>
-      <p>{{ recipe.ingredients}}</p>
+      <p class="text-justify">{{ recipe.ingredients}}</p>
     </div>
-    <div class="col-md-5">
-      <h3><strong>🌟 Category: </strong> {{recipe.category}}</h3>
+    <div class="col">
+      <h3><strong>🌟 Instructions:</strong></h3>
+      <p class="text-justify">{{recipe.instructions}}</p>
     </div>
   </div>
   <div>
-    <p><strong>🌟 Instructions:</strong> {{recipe.instructions}}</p>
+    <h3><strong>🌟 Category: </strong> {{recipe.category}}</h3>
   </div>
 </div>
 

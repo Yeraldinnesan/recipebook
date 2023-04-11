@@ -10,3 +10,8 @@ class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    # name = models.CharField(max_length=100)
+    # email = models.EmailField(blank=True)
+    # recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    # text = models.TextField()
+    # created_at = models.DateTimeField(auto_now_add=True)

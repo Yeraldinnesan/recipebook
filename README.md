@@ -1,9 +1,9 @@
 # recipebook-coder
 
-#Recipe Book App
+# Recipe Book App
 This is a web application for managing and sharing recipes built with Python and Django.
 
-#Requirements
+# Requirements
 To run this app, you'll need to have the following installed:
 
 Python 3.7 or higher
@@ -11,7 +11,7 @@ Django 3.2 or higher
 pip
 virtualenv
 
-#Installation
+# Installation
 Clone the repository and navigate to the project directory.
 bash
 Copy code
@@ -31,14 +31,14 @@ python manage.py migrate
 Start the server.
 Copy code
 python manage.py runserver
-Visit http://localhost:8000/ in your web browser to view the app.
+## Visit http://localhost:8000/ in your web browser to view the app.
 Usage
 You can use this app to create, read, update, and delete recipes. You can also search for recipes and browse recipes by category.
 
-#Contributing
+# Contributing
 If you'd like to contribute to this project, please follow these steps:
 
-#Fork the repository.
+# Fork the repository.
 Create a new branch with a descriptive name.
 Make your changes and commit them.
 Push your changes to your forked repository.

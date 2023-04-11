@@ -6,6 +6,61 @@
 
     <div>
       <div class="collapse navbar-collapse">
+        <form
+          class="d-flex gap-lg-5 my-2 my-lg-0"
+          method="GET"
+          action="{% url 'searchrecipe' %}"
+        >
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            name="keywords"
+          />
+          <button class="btn btn-outline-light bg-info" type="submit">
+            Search
+          </button>
+        </form>
+        <ul class="navbar-nav nav-underline ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              href="{% url 'home' %}"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              href="{% url 'create-recipe' %}"
+              >Create Recipe</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              href="{% url 'favorites' %}"
+              >Favorites</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary mr-auto bg-info">
+  <div class="container-fluid d-flex">
+    <a class="navbar-brand text-light fw-bolder" href="{% url 'home' %}"
+      >Book it</a
+    >
+
+    <div>
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav nav-underline ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
@@ -33,16 +88,20 @@
             </a>
           </li>
         </ul>
-        <form class="d-flex gap-lg-5 my-2 my-lg-0" role="search" method="GET">
+        <form class="d-flex gap-lg-5 my-2 my-lg-0" method="GET">
+          {% csrf_token %}
           <input
             class="form-control me-2"
             type="search"
-            placeholder="Search"
+            placeholder="Search ..."
             aria-label="Search"
+            name="keywords"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-light bg-info" type="submit">
+            Search
+          </button>
         </form>
       </div>
     </div>
   </div>
-</nav>
+</nav> -->

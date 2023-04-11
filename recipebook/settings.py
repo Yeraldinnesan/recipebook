@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'recipes',
     'comments',
     'favorites',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

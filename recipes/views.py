@@ -14,10 +14,13 @@ def home(request):
     return render(request, 'index.html', {'recipes': recipes})
 
 
-def recipe_detail(request, recipe_id):
-    recipe = get_object_or_404(Recipe, pk=recipe_id)
-
-    return render(request, 'recipedetail.html', {'recipe': recipe})
+# def recipe_detail(request, recipe_id):
+def recipe_detail(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+#     recipe = get_object_or_404(Recipe, pk=recipe_id)
+    comments = recipe.comments.all().order_by('-created_at')
+    return render(request, 'recipedetail.html', {'recipe': recipe, 'comments': comments})
+#     return render(request, 'recipedetail.html', {'recipe': recipe, 'comments': comments})
 
 
 def create_recipe(request):

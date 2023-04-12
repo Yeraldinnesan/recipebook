@@ -17,5 +17,8 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     instructions = models.TextField()
 
+    def get_comments(self):
+        return self.comments.all()
+
     def __str__(self):
         return self.title

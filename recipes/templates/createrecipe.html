@@ -1,11 +1,68 @@
 {% extends 'base.html' %}
 <!--  -->
 {% block content %}
+<div class="container">
+  <section id="register" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-info text-white">
+              <h4>Create your own Recipe</h4>
+            </div>
+            <div class="card-body">
+              <form method="post" class="mt-4">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="{{ form.title.id_for_label }}"
+                    >{{ form.title.label }}</label
+                  >
+                  <div class="form-control">{{ form.title }}</div>
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.description.id_for_label }}"
+                    >{{ form.description.label }}</label
+                  >
+                  <div class="form-control">{{ form.description }}</div>
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.category.id_for_label }}"
+                    >{{ form.category.label }}</label
+                  >
+                  <div class="form-control">{{ form.category }}</div>
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.ingredients.id_for_label }}"
+                    >{{ form.ingredients.label }}</label
+                  >
+                  <div class="form-control">{{ form.ingredients }}</div>
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.instructions.id_for_label }}"
+                    >{{ form.instructions.label }}</label
+                  >
+                  <div class="form-control">{{ form.instructions }}</div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn-block btn-info text-center my-5 py-3 rounded"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!--  -->
 
-<h1>Create Recipe</h1>
+<!-- <h1>Create Recipe</h1>
 <form method="post">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Save</button>
-</form>
+</form> -->
 
 {% endblock %}

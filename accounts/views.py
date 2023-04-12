@@ -16,7 +16,7 @@ def login(request):
         if user is not None:  # if not found in the db
             auth.login(request, user)
 
-            return redirect('index')
+            return redirect('home')
         else:
 
             return redirect('login')
@@ -59,4 +59,4 @@ def logout(request):
     if request.method == 'POST':
         auth.logout(request)
 
-    return redirect('index')
+    return redirect('home')
